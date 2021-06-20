@@ -1,6 +1,7 @@
 import numpy as np
 import cv2 as cv
 
+VIDEO_CAPTURE_ID = 1
 
 class CamCalibration:
     def __init__(self):
@@ -14,7 +15,7 @@ class CamCalibration:
         
     
     def startCal(self):
-        vidcap = cv.VideoCapture(1) 
+        vidcap = cv.VideoCapture(VIDEO_CAPTURE_ID) 
         if not vidcap.isOpened():
             raise IOError("Cannot open webcam")
 
