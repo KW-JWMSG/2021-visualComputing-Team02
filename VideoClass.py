@@ -1,10 +1,12 @@
 import cv2 as cv
 import numpy as np
 
+VIDEO_CAPTURE_ID = 1
+
 class VideoClass:
 
     def __init__(self, calb_npz="cam_param.npz"):
-        self.vidcap = cv.VideoCapture(1)
+        self.vidcap = cv.VideoCapture(VIDEO_CAPTURE_ID)
         if not self.vidcap.isOpened():
             raise IOError("Cannot open webcam")
         self._setCalb(calb_npz)
